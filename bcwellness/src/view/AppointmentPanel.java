@@ -55,8 +55,8 @@ public class AppointmentPanel extends JPanel {
             Appointment appt = new Appointment(id, studentName, counselorId, date, time, status);
             AppointmentController.addAppointment(appt);
             JOptionPane.showMessageDialog(this, "Appointment has been booked.");
-        }catch (Exception e){
-            JOptionPane.showMessageDialog(this, "Error: " + e.getMessage());
+        }catch (Exception ex){
+            JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage());
         }
     }
 }
