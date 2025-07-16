@@ -12,8 +12,8 @@ public class Main {
 
             // Tabs for each section
             JTabbedPane tabbedPane = new JTabbedPane();
-            tabbedPane.addTab("Appointments", new JLabel("Appointments UI Placeholder"));
-            tabbedPane.addTab("Counselors", new JLabel("Counselors UI Placeholder"));
+            tabbedPane.addTab("Appointments", new AppointmentPanel());
+            tabbedPane.addTab("Counselors", new CounselorPanel());
             tabbedPane.addTab("Feedback", new FeedbackPanel());
 
             frame.add(tabbedPane, BorderLayout.CENTER);
