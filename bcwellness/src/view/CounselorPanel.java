@@ -11,7 +11,10 @@ public class CounselorPanel extends JPanel {
     private JTextField txtCounselorId, txtFirstName, txtLastName, txtSpecialization, txtEmail, txtAvailability;
 
     public CounselorPanel() {
-        setLayout(new GridLayout(5,2, 10, 10));
+        setLayout(new GridLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(8, 8, 8, 8);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
 
         txtCounselorId = new JTextField();
         txtFirstName = new JTextField();
@@ -20,18 +23,31 @@ public class CounselorPanel extends JPanel {
         txtEmail = new JTextField();
         txtAvailability = new JTextField("Available/Unavailable");
 
-        add(new JLabel("Counselor ID: "));
-        add(txtCounselorId);
-        add(new JLabel("First Name: "));
-        add(txtFirstName);
-        add(new JLabel("Last Name: "));
-        add(txtLastName);
-        add(new JLabel("Specialization: "));
-        add(txtSpecialization);
-        add(new JLabel("Email: "));
-        add(txtEmail);
-        add(new JLabel("Availability: "));
-        add(txtAvailability);
+        String[] labels = {
+                "Counselor ID",
+                "First Name",
+                "Last Name",
+                "Specialization",
+                "Email",
+                "Availability"
+        };
+        JTextField[] fields = {
+                txtCounselorId,
+                txtFirstName,
+                txtLastName,
+                txtSpecialization,
+                txtEmail,
+                txtAvailability
+        };
+
+        for (int i = 0; i < labels.length; i++) {
+            gbc.gridx = 0;
+            gbc.gridy = i;
+            add(new JLabel(labels[i]), gbc);
+
+            gbc.gridx = 1;
+            add(fields[i], gbc);
+        }
 
         JButton btnAdd = new JButton("Add Counselor");
         btnAdd.addActionListener(this::addCounselor);
