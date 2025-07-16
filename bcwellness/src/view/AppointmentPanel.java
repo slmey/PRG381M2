@@ -17,13 +17,14 @@ public class AppointmentPanel extends JPanel {
     public AppointmentPanel() {
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(8, 8, 8, 8);
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        gbc.anchor = GridBagConstraints.WEST;
 
-        // Initialize fields with default text
-        for (int i = 0; i < fields.length; i++) {
-            fields[i] = new JTextField(20);
+        gbc.insets = new Insets(8, 8, 8, 8);
+        gbc.fill = GridBagConstraints.BOTH;
+        gbc.weightx = 1.0;
+        gbc.weighty = 0.1;
+
+        for (int i = 0; i < labels.length; i++) {
+            fields[i] = new JTextField();
             if (labels[i].contains("Date")) fields[i].setText("yyyy-mm-dd");
             if (labels[i].contains("Time")) fields[i].setText("hh:mm:ss");
             if (labels[i].contains("Status")) fields[i].setText("Scheduled");
@@ -37,13 +38,13 @@ public class AppointmentPanel extends JPanel {
             add(fields[i], gbc);
         }
 
-        // Add button
         JButton btnSave = new JButton("Book Appointment");
         btnSave.addActionListener(this::saveAppointment);
 
         gbc.gridx = 0;
         gbc.gridy = labels.length;
         gbc.gridwidth = 2;
+        gbc.weighty = 0.2;
         gbc.anchor = GridBagConstraints.CENTER;
         add(btnSave, gbc);
     }
