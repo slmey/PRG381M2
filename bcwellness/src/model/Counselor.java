@@ -16,4 +16,29 @@ public class Counselor {
         this.email = email;
         this.availability = availability;
     }
+
+    // Getters
+    public int getCounselorId() {
+        return counselorId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getSpecialization() {
+        return specialization;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getAvailability() {
+        return availability;
+    }
 }

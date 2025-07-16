@@ -1,5 +1,8 @@
 package model;
 
+import java.sql.Date;
+import java.sql.Time;
+
 public class Feedback {
     private int id;
     private String studentName;
@@ -13,5 +16,26 @@ public class Feedback {
         this.studentEmail = studentEmail;
         this.feedback = feedback;
         this.rating = rating;
+    }
+
+    //Getters
+    public int getId() {
+        return id;
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public String getStudentEmail() {
+        return studentEmail;
+    }
+
+    public String getFeedback() {
+        return feedback;
+    }
+
+    public int getRating() {
+        return rating;
     }
 }

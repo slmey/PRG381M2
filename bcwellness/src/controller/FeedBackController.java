@@ -14,7 +14,7 @@ public class FeedBackController {
             ps.setInt(1, feedback.getId());
             ps.setString(2, feedback.getStudentName());
             ps.setString(3, feedback.getStudentEmail());
-            ps.setString(4, feedback.getFeedback);
+            ps.setString(4, feedback.getFeedback());
             ps.setInt(5, feedback.getRating());
             ps.executeUpdate();
         } catch (SQLException e) {
