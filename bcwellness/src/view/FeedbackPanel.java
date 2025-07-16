@@ -1,7 +1,6 @@
 package view;
 
 import controller.FeedBackController;
-import controller.FeedbackController;
 import model.Feedback;
 
 import javax.swing.*;

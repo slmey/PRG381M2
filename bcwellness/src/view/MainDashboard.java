@@ -1,19 +1,16 @@
 package view;
 
-import model.Feedback;
-
-import javax.imageio.plugins.tiff.ExifTIFFTagSet;
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
 
-public class MainDashboard {
+public class MainDashboard extends JFrame {
+
     public MainDashboard() {
         setTitle("Wellness Management System");
         setSize(800, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        //create tabbed panel
+        // Create tabbed panel
         JTabbedPane tabbedPane = new JTabbedPane();
 
         tabbedPane.addTab("Appointments", new AppointmentPanel());
