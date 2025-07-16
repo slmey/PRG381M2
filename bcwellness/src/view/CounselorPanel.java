@@ -47,7 +47,7 @@ public class CounselorPanel extends JPanel {
             String email = txtEmail.getText();
             String availability = txtAvailability.getText();
 
-            if (counselorId.isEmpty || firstName.isEmpty() || lastName.isEmpty() || specialization.isEmpty() || email.isEmpty() || availability.isEmpty()) {
+            if (counselorId < 1 || firstName.isEmpty() || lastName.isEmpty() || specialization.isEmpty() || email.isEmpty() || availability.isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Please fill all the fields");
                 return;
             }
