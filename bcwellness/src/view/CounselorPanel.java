@@ -67,6 +67,10 @@ public class CounselorPanel extends JPanel {
                 JOptionPane.showMessageDialog(this, "Please fill all the fields");
                 return;
             }
+
+            Counselor c = new Counselor(counselorId, firstName, lastName, specialization, email, availability);
+            CounselorController.addCounselor(c);
+            JOptionPane.showMessageDialog(this, "Counselor successfully added!");
         }catch (Exception ex){
             JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage());
         }
