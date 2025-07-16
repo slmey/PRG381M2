@@ -52,6 +52,11 @@ public class CounselorPanel extends JPanel {
         JButton btnAdd = new JButton("Add Counselor");
         btnAdd.addActionListener(this::addCounselor);
         add(btnAdd);
+
+        gbc.gridx = 0;
+        gbc.gridy = labels.length;
+        gbc.gridwidth = 2;
+        add(btnAdd, gbc);
     }
 
     private void addCounselor(ActionEvent e){

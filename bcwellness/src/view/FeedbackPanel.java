@@ -9,33 +9,51 @@ import java.awt.event.ActionEvent;
 
 public class FeedbackPanel extends JPanel {
     private JTextField txtId, txtStudentName, txtStudentEmail, txtFeedback, txtRating;
-    private JTextArea txtComments;
 
     public FeedbackPanel() {
-        setLayout(new GridLayout(5, 2, 10, 10));
+        setLayout(new GridLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(8, 8, 8, 8);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
 
         txtId = new JTextField();
         txtStudentName = new JTextField();
         txtStudentEmail = new JTextField();
         txtFeedback = new JTextField();
         txtRating = new JTextField();
-        txtComments = new JTextArea();
 
-        add(new JLabel("ID: "));
-        add(txtId);
-        add(new JLabel("Student Name: "));
-        add(txtStudentName);
-        add(new JLabel("Student Email: "));
-        add(txtStudentEmail);
-        add(new JLabel("Feedback: "));
-        add(txtFeedback);
-        add(new JLabel("Rating: "));
-        add(txtRating);
-        add(new JScrollPane(txtComments));
+        String[] lables = {
+                "ID",
+                "Student Name",
+                "Student Email",
+                "Feedback",
+                "Rating"
+        };
+        JTextField[] fields = {
+                txtId,
+                txtStudentName,
+                txtStudentEmail,
+                txtFeedback,
+                txtRating
+        };
+
+        for (int i = 0; i < lables.length; i++) {
+            gbc.gridx = 0;
+            gbc.gridy = i;
+            add(new JLabel(lables[i]), gbc);
+
+            gbc.gridx = 1;
+            add(fields[i], gbc);
+        }
 
         JButton btnSubmit = new JButton("Submit Feedback");
         btnSubmit.addActionListener(this::submitFeedback);
         add(btnSubmit);
+
+        gbc.gridx = 0;
+        gbc.gridy = lables.length;
+        gbc.gridwidth = 2;
+        add(btnSubmit, gbc);
     }
 
     private void submitFeedback(ActionEvent e) {
