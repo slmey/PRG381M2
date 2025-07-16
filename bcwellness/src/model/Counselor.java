@@ -1,7 +1,7 @@
 package model;
 
 public class Counselor {
-    private int id;
+    private int counselorId;
     private String firstName;
     private String lastName;
     private String specialization;
@@ -9,7 +9,7 @@ public class Counselor {
     private String availability;
 
     public Counselor(int id, String firstName, String lastName, String specialization, String email, String availability) {
-        this.id = id;
+        this.counselorId = counselorId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.specialization = specialization;
