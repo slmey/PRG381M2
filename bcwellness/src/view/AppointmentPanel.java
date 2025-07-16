@@ -47,7 +47,7 @@ public class AppointmentPanel extends JPanel {
             String time = txtTime.getText();
             String status = txtStatus.getText();
 
-            if (id.isEmpty() || studentName.isEmpty() || counselorId.isEmpty() || date.isEmpty() || time.isEmpty() || status.isEmpty()){
+            if (id < 1 || studentName.isEmpty() || counselorId < 1 || date.isEmpty() || time.isEmpty() || status.isEmpty()){
                 JOptionPane.showMessageDialog(this, "Please fill all the fields.");
                 return;
             }
