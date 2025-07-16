@@ -5,9 +5,9 @@ public class Feedback {
     private String studentName;
     private String studentEmail;
     private String feedback;
-    private String rating;
+    private int rating;
 
-    public Feedback(int id, String studentName, String studentEmail, String feedback, String rating) {
+    public Feedback(int id, String studentName, String studentEmail, String feedback, int rating) {
         this.id = id;
         this.studentName = studentName;
         this.studentEmail = studentEmail;
