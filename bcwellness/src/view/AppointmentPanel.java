@@ -8,46 +8,57 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class AppointmentPanel extends JPanel {
-    private JTextField txtId, txtStudentName, txtCounselorId, txtDate, txtTime, txtStatus;
+    private final JTextField[] fields = new JTextField[6];
+    private final String[] labels = {
+            "ID:", "Student Name:", "Counselor ID:",
+            "Date (yyyy-mm-dd):", "Time (hh:mm:ss):", "Status:"
+    };
 
     public AppointmentPanel() {
-        setLayout(new GridLayout(7, 2, 10, 10));
+        setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(8, 8, 8, 8);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.anchor = GridBagConstraints.WEST;
 
-        txtId = new JTextField();
-        txtStudentName = new JTextField();
-        txtCounselorId = new JTextField();
-        txtDate = new JTextField("yyyy-mm-dd");
-        txtTime = new JTextField("hh:mm:ss");
-        txtStatus = new JTextField("Scheduled");
+        // Initialize fields with default text
+        for (int i = 0; i < fields.length; i++) {
+            fields[i] = new JTextField(20);
+            if (labels[i].contains("Date")) fields[i].setText("yyyy-mm-dd");
+            if (labels[i].contains("Time")) fields[i].setText("hh:mm:ss");
+            if (labels[i].contains("Status")) fields[i].setText("Scheduled");
 
-        add(new JLabel("ID: "));
-        add(txtId);
-        add(new JLabel("Student Name: "));
-        add(txtStudentName);
-        add(new JLabel("Counselor ID: "));
-        add(txtCounselorId);
-        add(new JLabel("Date: "));
-        add(txtDate);
-        add(new JLabel("Time: "));
-        add(txtTime);
-        add(new JLabel("Status: "));
-        add(txtStatus);
+            gbc.gridx = 0;
+            gbc.gridy = i;
+            gbc.gridwidth = 1;
+            add(new JLabel(labels[i]), gbc);
 
+            gbc.gridx = 1;
+            add(fields[i], gbc);
+        }
+
+        // Add button
         JButton btnSave = new JButton("Book Appointment");
         btnSave.addActionListener(this::saveAppointment);
-        add(btnSave);
+
+        gbc.gridx = 0;
+        gbc.gridy = labels.length;
+        gbc.gridwidth = 2;
+        gbc.anchor = GridBagConstraints.CENTER;
+        add(btnSave, gbc);
     }
 
-    private void saveAppointment(ActionEvent e){
+    private void saveAppointment(ActionEvent e) {
         try {
-            int id = Integer.parseInt(txtId.getText());
-            String studentName = txtStudentName.getText();
-            int counselorId = Integer.parseInt(txtCounselorId.getText());
-            String date = txtDate.getText();
-            String time = txtTime.getText();
-            String status = txtStatus.getText();
+            int id = Integer.parseInt(fields[0].getText());
+            String studentName = fields[1].getText();
+            int counselorId = Integer.parseInt(fields[2].getText());
+            String date = fields[3].getText();
+            String time = fields[4].getText();
+            String status = fields[5].getText();
 
-            if (id < 1 || studentName.isEmpty() || counselorId < 1 || date.isEmpty() || time.isEmpty() || status.isEmpty()){
+            if (id < 1 || studentName.isEmpty() || counselorId < 1 ||
+                    date.isEmpty() || time.isEmpty() || status.isEmpty()) {
                 JOptionPane.showMessageDialog(this, "Please fill all the fields.");
                 return;
             }
@@ -55,7 +66,7 @@ public class AppointmentPanel extends JPanel {
             Appointment appt = new Appointment(id, studentName, counselorId, date, time, status);
             AppointmentController.addAppointment(appt);
             JOptionPane.showMessageDialog(this, "Appointment has been booked.");
-        }catch (Exception ex){
+        } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage());
         }
     }

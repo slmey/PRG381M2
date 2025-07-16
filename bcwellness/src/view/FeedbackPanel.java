@@ -11,49 +11,42 @@ public class FeedbackPanel extends JPanel {
     private JTextField txtId, txtStudentName, txtStudentEmail, txtFeedback, txtRating;
 
     public FeedbackPanel() {
-        setLayout(new GridLayout());
+        setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(8, 8, 8, 8);
+        gbc.anchor = GridBagConstraints.WEST;
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        txtId = new JTextField();
-        txtStudentName = new JTextField();
-        txtStudentEmail = new JTextField();
-        txtFeedback = new JTextField();
-        txtRating = new JTextField();
+        txtId = new JTextField(20);
+        txtStudentName = new JTextField(20);
+        txtStudentEmail = new JTextField(20);
+        txtFeedback = new JTextField(20);
+        txtRating = new JTextField(20);
 
-        String[] lables = {
-                "ID",
-                "Student Name",
-                "Student Email",
-                "Feedback",
-                "Rating"
-        };
-        JTextField[] fields = {
-                txtId,
-                txtStudentName,
-                txtStudentEmail,
-                txtFeedback,
-                txtRating
-        };
-
-        for (int i = 0; i < lables.length; i++) {
-            gbc.gridx = 0;
-            gbc.gridy = i;
-            add(new JLabel(lables[i]), gbc);
-
-            gbc.gridx = 1;
-            add(fields[i], gbc);
-        }
+        addLabelAndField("ID:", txtId, gbc, 0);
+        addLabelAndField("Student Name:", txtStudentName, gbc, 1);
+        addLabelAndField("Student Email:", txtStudentEmail, gbc, 2);
+        addLabelAndField("Feedback:", txtFeedback, gbc, 3);
+        addLabelAndField("Rating (1–5):", txtRating, gbc, 4);
 
         JButton btnSubmit = new JButton("Submit Feedback");
         btnSubmit.addActionListener(this::submitFeedback);
-        add(btnSubmit);
 
         gbc.gridx = 0;
-        gbc.gridy = lables.length;
+        gbc.gridy = 5;
         gbc.gridwidth = 2;
+        gbc.anchor = GridBagConstraints.CENTER;
         add(btnSubmit, gbc);
+    }
+
+    private void addLabelAndField(String labelText, JTextField field, GridBagConstraints gbc, int row) {
+        gbc.gridx = 0;
+        gbc.gridy = row;
+        gbc.gridwidth = 1;
+        add(new JLabel(labelText), gbc);
+
+        gbc.gridx = 1;
+        add(field, gbc);
     }
 
     private void submitFeedback(ActionEvent e) {
@@ -65,15 +58,15 @@ public class FeedbackPanel extends JPanel {
             int rating = Integer.parseInt(txtRating.getText());
 
             if (id < 1 || studentName.isEmpty() || studentEmail.isEmpty() || feedback.isEmpty() || rating < 1 || rating > 5) {
-                JOptionPane.showMessageDialog(this, "Please fill all the fields");
+                JOptionPane.showMessageDialog(this, "Please fill all the fields correctly");
                 return;
             }
 
             Feedback f = new Feedback(id, studentName, studentEmail, feedback, rating);
             FeedBackController.addFeedback(f);
             JOptionPane.showMessageDialog(this, "Feedback submitted");
-        }catch (Exception ex) {
-            JOptionPane.showMessageDialog(this,"Error" + ex.getMessage());
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage());
         }
     }
 }
