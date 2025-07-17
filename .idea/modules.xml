@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/PRG381M2.iml" filepath="$PROJECT_DIR$/.idea/PRG381M2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/database/database.iml" filepath="$PROJECT_DIR$/database/database.iml" />
+      <module fileurl="file://$PROJECT_DIR$/database/sql/sql.iml" filepath="$PROJECT_DIR$/database/sql/sql.iml" />
       <module fileurl="file://$PROJECT_DIR$/bcwellness/src.iml" filepath="$PROJECT_DIR$/bcwellness/src.iml" />
     </modules>
   </component>
