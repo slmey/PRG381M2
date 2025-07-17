@@ -98,7 +98,7 @@ src/
 ## 👥 Authors
 
 - **Student Name:** Petri Loots               | 600663
-- **Student Name:** Kemitso Pole              | 600663
+- **Student Name:** Kemitso Pole              | 601341
 - **Student Name:** Shaun de Beer             | 601245
 - **Student Name:** Daniel Richardt Scholtz   | 600162
 - **Student Name:** Adolph Jacobus Van Coller | 601005
