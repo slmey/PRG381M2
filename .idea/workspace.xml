@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97e5cf47-42a6-4ca4-b66e-6c4dcc7b84fd" name="Changes" comment="" />
+    <list default="true" id="97e5cf47-42a6-4ca4-b66e-6c4dcc7b84fd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/out/production/src/controller/CounselorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/controller/CounselorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/controller/FeedBackController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/controller/FeedBackController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/model/Counselor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/model/Counselor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/view/AppointmentPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/view/AppointmentPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/view/CounselorPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/view/CounselorPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/src/view/FeedbackPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/src/view/FeedbackPanel.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,7 +136,7 @@
       <workItem from="1752760623309" duration="151000" />
       <workItem from="1752761089491" duration="270000" />
       <workItem from="1752764661411" duration="772000" />
-      <workItem from="1752781548805" duration="604000" />
+      <workItem from="1752781548805" duration="777000" />
     </task>
     <servers />
   </component>
