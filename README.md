@@ -82,7 +82,7 @@ src/
 
 1. Ensure **JavaDB** is installed and the Derby server is running.
 2. Create the database `WellnessDB` and run the SQL scripts in `resources/sql/`.
-3. Compile and run `Main.java` using your IDE (NetBeans, IntelliJ, or VS Code).
+3. Compile and run `MainDashboard.java` using your IDE (NetBeans, IntelliJ, or VS Code).
 4. Use the dashboard to navigate between modules and perform CRUD operations.
 
 ---
