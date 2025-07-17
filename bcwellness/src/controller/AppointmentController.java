@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import model.Appointment;
 import model.DBConnection;
 
-/* 
+/*
  * Manages CRUD operations for appointments, interacting with the database.
  */
 public class AppointmentController {
-    /* 
+    /*
      * Adds a new appointment to the database.
      * appointment - The appointment object to add
      */
@@ -28,7 +28,7 @@ public class AppointmentController {
         }
     }
 
-    /* 
+    /*
      * Retrieves all appointments from the database.
      * Returns an ArrayList containing all Appointment objects
      */
@@ -53,7 +53,7 @@ public class AppointmentController {
         return list;
     }
 
-    /* 
+    /*
      * Updates an existing appointment in the database.
      * appointment - The appointment object with updated details
      */
@@ -73,7 +73,7 @@ public class AppointmentController {
         }
     }
 
-    /* 
+    /*
      * Deletes an appointment from the database based on its ID.
      * id - The ID of the appointment to delete
      */
@@ -88,6 +88,3 @@ public class AppointmentController {
         }
     }
 }
-
-
-
