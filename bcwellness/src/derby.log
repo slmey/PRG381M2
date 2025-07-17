@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Thu Jul 17 11:07:33 SAST 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.17.1.0 - (1913217): instance a816c00e-0198-17a3-92e1-000006c30a98 
+on database directory C:\Users\kemis\WellnessDB with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@33909752 
+Loaded from file:/C:/Users/kemis/Downloads/PRG381M2-1/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=21.0.6+8-LTS-188
+user.dir=C:\Users\kemis\Downloads\PRG381M2-1\bcwellness\src
+os.name=Windows 11
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
