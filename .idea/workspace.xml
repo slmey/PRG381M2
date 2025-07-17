@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97e5cf47-42a6-4ca4-b66e-6c4dcc7b84fd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/bcwellness/src/model/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/bcwellness/src/model/Appointment.java" afterDir="false" />
-    </list>
+    <list default="true" id="97e5cf47-42a6-4ca4-b66e-6c4dcc7b84fd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,7 +129,7 @@
       <workItem from="1752760623309" duration="151000" />
       <workItem from="1752761089491" duration="270000" />
       <workItem from="1752764661411" duration="772000" />
-      <workItem from="1752781548805" duration="291000" />
+      <workItem from="1752781548805" duration="604000" />
     </task>
     <servers />
   </component>

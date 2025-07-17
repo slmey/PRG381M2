@@ -10,7 +10,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import model.Appointment;
 
-/* 
+/*
  * A panel for managing appointments, providing a GUI for CRUD operations.
  */
 public class AppointmentPanel extends JPanel {
@@ -19,7 +19,7 @@ public class AppointmentPanel extends JPanel {
     private JTable table;         // Table to display appointment data
     private DefaultTableModel tableModel; // Model for the JTable
 
-    /* 
+    /*
      * Constructs the AppointmentPanel with input fields, buttons, and table.
      */
     public AppointmentPanel() {
@@ -28,7 +28,7 @@ public class AppointmentPanel extends JPanel {
         initializeTable();
     }
 
-    /* 
+    /*
      * Initializes the input panel with labels, text fields, and buttons.
      */
     private void initializeInputPanel() {
@@ -78,7 +78,7 @@ public class AppointmentPanel extends JPanel {
         add(inputPanel, BorderLayout.NORTH);
     }
 
-    /* 
+    /*
      * Initializes the table to display appointment data.
      */
     private void initializeTable() {
@@ -88,9 +88,22 @@ public class AppointmentPanel extends JPanel {
         JScrollPane scrollPane = new JScrollPane(table);
         add(scrollPane, BorderLayout.CENTER);
         refreshTable(null); // Initial load of data
+
+        // Add listener for row selection
+        table.getSelectionModel().addListSelectionListener(e -> {
+            if (!e.getValueIsAdjusting() && table.getSelectedRow() != -1) {
+                int selectedRow = table.getSelectedRow();
+                fields[0].setText(table.getValueAt(selectedRow, 0).toString()); // ID
+                fields[1].setText(table.getValueAt(selectedRow, 1).toString()); // Student Name
+                fields[2].setText(table.getValueAt(selectedRow, 2).toString()); // Counselor ID
+                fields[3].setText(table.getValueAt(selectedRow, 3).toString()); // Date
+                fields[4].setText(table.getValueAt(selectedRow, 4).toString()); // Time
+                fields[5].setText(table.getValueAt(selectedRow, 5).toString()); // Status
+            }
+        });
     }
 
-    /* 
+    /*
      * Handles booking a new appointment.
      * e - The action event triggered by the button
      */
@@ -118,7 +131,7 @@ public class AppointmentPanel extends JPanel {
         }
     }
 
-    /* 
+    /*
      * Handles updating an existing appointment.
      * e - The action event triggered by the button
      */
@@ -146,7 +159,7 @@ public class AppointmentPanel extends JPanel {
         }
     }
 
-    /* 
+    /*
      * Handles deleting an appointment.
      * e - The action event triggered by the button
      */
@@ -165,7 +178,7 @@ public class AppointmentPanel extends JPanel {
         }
     }
 
-    /* 
+    /*
      * Refreshes the table with the latest appointment data.
      * e - The action event triggered by the button (can be null)
      */
@@ -180,7 +193,7 @@ public class AppointmentPanel extends JPanel {
         }
     }
 
-    /* 
+    /*
      * Clears all input fields after a successful operation.
      */
     private void clearFields() {
