@@ -1,7 +1,7 @@
 package model;
 
-import java.sql.Time;
 import java.sql.Date;
+import java.sql.Time;
 
 public class Appointment {
     private int id;
@@ -11,12 +11,12 @@ public class Appointment {
     private Time time;
     private String status;
 
-    public Appointment(int id, String studentName, int counselorId, String dateStr, String timeStr, String status) {
+    public Appointment(int id, String studentName, int counselorId, Date date, Time time, String status) {
         this.id = id;
         this.studentName = studentName;
         this.counselorId = counselorId;
-        this.date = Date.valueOf(dateStr);
-        this.time = Time.valueOf(timeStr);
+        this.date = date;
+        this.time = time;
         this.status = status;
     }
 
