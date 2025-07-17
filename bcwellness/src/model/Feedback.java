@@ -1,8 +1,8 @@
 package model;
 
-import java.sql.Date;
-import java.sql.Time;
-
+/*
+ * Represents feedback submitted by a student in the wellness management system.
+ */
 public class Feedback {
     private int id;
     private String studentName;
@@ -18,7 +18,7 @@ public class Feedback {
         this.rating = rating;
     }
 
-    //Getters
+    // Getters
     public int getId() {
         return id;
     }
