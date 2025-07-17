@@ -1,15 +1,25 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import view.AppointmentPanel;
+import view.CounselorPanel;
+import view.FeedbackPanel;
+
+import javax.swing.*;
+import java.awt.*;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        SwingUtilities.invokeLater(() -> {
+            JFrame frame = new JFrame("Wellness Management System");
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            frame.setSize(800, 600);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+            // Tabs for each section
+            JTabbedPane tabbedPane = new JTabbedPane();
+            tabbedPane.addTab("Appointments", new AppointmentPanel());
+            tabbedPane.addTab("Counselors", new CounselorPanel());
+            tabbedPane.addTab("Feedback", new FeedbackPanel());
+
+            frame.add(tabbedPane, BorderLayout.CENTER);
+            frame.setVisible(true);
+        });
     }
 }
